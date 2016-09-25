@@ -14,7 +14,9 @@ Make sure they communicate over the same ROS topics and std_msgs.Int64 ROS Messa
 import spynnaker.pyNN as pynn
 
 from ros_spinnaker_interface import ROS_Spinnaker_Interface
-import transfer_functions as tf
+# import transfer_functions as tf
+from ros_spinnaker_interface import SpikeSourcePoisson
+from ros_spinnaker_interface import SpikeSinkSmoothing
 
 
 ts = 0.1
@@ -31,8 +33,8 @@ pop = pynn.Population(size=n_neurons, cellclass=pynn.IF_curr_exp, cellparams={},
 # The ROS_Spinnaker_Interface just needs to be initialised. The following parameters are possible:
 ros_interface = ROS_Spinnaker_Interface(
         n_neurons_source=n_neurons,                 # number of neurons of the injector population
-        Spike_Source_Class=tf.SpikeSourcePoisson,   # the transfer function ROS Input -> Spikes you want to use.
-        Spike_Sink_Class=tf.SpikeSinkSmoothing,     # the transfer function Spikes -> ROS Output you want to use.
+        Spike_Source_Class=SpikeSourcePoisson,   # the transfer function ROS Input -> Spikes you want to use.
+        Spike_Sink_Class=SpikeSinkSmoothing,     # the transfer function Spikes -> ROS Output you want to use.
                                                     # You can choose from the transfer_functions module
                                                     # or write one yourself.
         output_population=pop,                      # the pynn population you wish to receive the
