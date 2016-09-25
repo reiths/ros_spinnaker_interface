@@ -16,8 +16,9 @@ import pylab
 from pylab import np
 
 from ros_spinnaker_interface import ROS_Spinnaker_Interface
-import transfer_functions as tf
-
+# import transfer_functions as tf
+from ros_spinnaker_interface import SpikeSourceConstantRate
+from ros_spinnaker_interface import SpikeSinkSmoothing
 
 
 ts      = 0.1  # ms
@@ -59,8 +60,8 @@ for i in range(n_interfaces):
 
     ros_interface = ROS_Spinnaker_Interface(
             n_neurons_source=n_neurons,
-            Spike_Source_Class=tf.SpikeSourceConstantRate,
-            Spike_Sink_Class=tf.SpikeSinkSmoothing,
+            Spike_Source_Class=SpikeSourceConstantRate,
+            Spike_Sink_Class=SpikeSinkSmoothing,
             output_population=pop,
             ros_topic_send='to_spinnaker',
             ros_topic_recv='from_spinnaker',
