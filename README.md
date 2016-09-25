@@ -19,6 +19,13 @@ This package is not yet published on PyPI, but you can simply install it using t
 I highly recommend using a virtual python environment. Make sure rospy and all other python packages are linked correctly.
 
 
+# Notes
+This is work in progress, please tell me if any errors occur. 
+
+Possible improvements could be manual timesteps in the base spike source / sink, like in spinnaker.
+A more flexible way to change the ros message type would also be nice. The biggest problem here is the hardcoding of the message data field.
+
+
 # Documentation
 ## Interface
 
