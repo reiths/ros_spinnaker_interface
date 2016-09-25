@@ -10,16 +10,14 @@ Transform incoming ROS Messages into spikes and inject them into the Spinnaker B
 To run this interface you will need ROS and the Spinnaker Software, including the SpyNNakerExternalDevicesPlugin.
 For Spinnaker, have a look at the PyNN on SpiNNaker Installation Guide on http://spinnakermanchester.github.io.
 
-This package is not yet published on PyPI. To install this Python Package, clone the repository and cd into it.
-The package can then be installed locally using
-	
-	pip install .
+Also you will need a working ROS distribution, including rospy.
 
-or with symlink, so the source files can be changed
+This package is not yet published on PyPI, but you can simply install it using the following command.
 
-	pip install -e .
+	pip install git+https://github.com/reiths/ros_spinnaker_interface
 
-[!] This procedure has not been tested yet, maybe there are still import errors. I will test the installation procedure as soon as possible. [!]
+I highly recommend using a virtual python environment. Make sure rospy and all other python packages are linked correctly.
+
 
 # Documentation
 ## Interface
