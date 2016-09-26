@@ -7,5 +7,5 @@ setup(name='ros_spinnaker_interface',
       author='Stephan Reith',
       author_email='stephan.reith@tum.de',
       license='MIT',
-      packages=['ros_spinnaker_interface', 'examples', 'benchmarks'],
+      packages=['ros_spinnaker_interface'],
       zip_safe=False)
